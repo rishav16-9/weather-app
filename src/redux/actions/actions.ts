@@ -1,13 +1,9 @@
-import type { Dispatch } from "redux";
 import { ACTION_TYPE } from "../constants/action-type";
+import type { WeatherPayload } from "@/api/weather-data-interface";
 
-export const fetchWeatherDetails = () => async (dispatch: Dispatch) => {
-  const response = await fetch(
-    "http://api.weatherapi.com/v1/forecast.json?key=&q=kathmandu&days=5"
-  );
-
-  dispatch({
-    type: ACTION_TYPE.FETCH_WEATHER_DETAIL,
-    payload: await response.json(),
-  });
+export const fetchData = (data: WeatherPayload | undefined) => {
+  return {
+    type: ACTION_TYPE.FETCH_DATA,
+    payload: data,
+  };
 };
