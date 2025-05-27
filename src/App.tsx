@@ -1,14 +1,18 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchWeatherDetails } from "./redux/actions/actions";
-import type { AppDispatch } from "./store";
-
+import { Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import { NavbarView } from "./modules/home/ui/views/NavbarView";
 function App() {
-  const dispatch = useDispatch<AppDispatch>();
-  useEffect(() => {
-    dispatch(fetchWeatherDetails());
-  }, [dispatch]);
-  return <div className="text-pink-400 text-4xl">Test</div>;
+  const Home = lazy(() => import("./app/home/Home"));
+  return (
+    <div>
+      <Suspense fallback={<p>loading ...</p>}>
+        <NavbarView/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Suspense>
+    </div>
+  );
 }
 
 export default App;

@@ -3,13 +3,11 @@ import { ACTION_TYPE } from "../constants/action-type";
 
 interface WeatherState {
   weatherData?: WeatherPayload;
-  loading: boolean;
-  error?: string;
 }
 
 // Action interfaces
 interface FetchWeatherDetailAction {
-  type: typeof ACTION_TYPE.FETCH_WEATHER_DETAIL;
+  type: typeof ACTION_TYPE.FETCH_DATA;
   payload: WeatherPayload;
 }
 
@@ -18,8 +16,6 @@ type WeatherActionTypes = FetchWeatherDetailAction;
 // Initial state
 const initialState: WeatherState = {
   weatherData: undefined,
-  loading: false,
-  error: undefined,
 };
 
 export const weatherReducer = (
@@ -27,7 +23,7 @@ export const weatherReducer = (
   action: WeatherActionTypes
 ) => {
   switch (action.type) {
-    case ACTION_TYPE.FETCH_WEATHER_DETAIL:
+    case ACTION_TYPE.FETCH_DATA:
       return { ...state, ...action.payload };
     default:
       return state;
