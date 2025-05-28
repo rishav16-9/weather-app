@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# 🌤️ Weather Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and user-friendly weather dashboard built with **React.js**, leveraging real-time weather data from a free API. This application showcases React fundamentals along with advanced concepts like **API integration**, **component structure**, **hooks**, **context/redux**, and **local storage** usage.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### ✅ Core Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔍 Search weather by city
+- 🌡️ Display temperature, weather conditions
+- 🌤️ Show weather icons based on current conditions
+- 🔁 Auto-refresh weather data every 30 seconds
+- 💾 Save last searched city using **localStorage**
+- ⚠️ Handle API and network errors gracefully
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 🎁 Bonus Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🔄 Toggle between **Celsius and Fahrenheit**
+- 📅 Display **5-day weather forecast**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🛠️ Tech Stack
+
+| Technology         | Purpose                           |
+| ------------------ | --------------------------------- | --------- |
+| React.js           | Frontend framework                |
+| Vite / CRA         | Project setup and bundling        |
+| Styled Components  | Tailwind CSS                      | Shadcn UI |
+| OpenWeatherMap API | Real-time weather data            |
+| React Hooks        | `useState`, `useEffect`           |
+| React Redux        | Global state management           |
+| React Router       | Routing between views (if needed) |
+
+---
+
+# Install dependencies
+
+npm run dev
+
+# Set Up Environment Variables
+
+VITE_WEATHER_API_KEY=your_api_key_here
+
+# Run the app
+
+npm run dev

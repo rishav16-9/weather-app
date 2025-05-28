@@ -5,9 +5,13 @@ const Home = () => {
   const location = localStorage.getItem("lastsearchedcitykey") || "";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-slate-700 via-bg-[#f4f4f3] to-amber-400 ">
-      <Search location={location} />
-      <Weather />
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-slate-700 via-slate-400 to-amber-400">
+      <div className="flex-1 flex flex-col items-center justify-start pt-20 pb-8 px-4 w-full">
+        <Search location={location} />
+        <div className="w-full max-w-4xl">
+          <Weather />
+        </div>
+      </div>
     </div>
   );
 };

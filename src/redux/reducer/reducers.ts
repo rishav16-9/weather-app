@@ -1,4 +1,4 @@
-import type { WeatherPayload } from "@/api/weather-data-interface";
+import type { WeatherPayload } from "@/modules/weather/types";
 import { ACTION_TYPE } from "../constants/action-type";
 
 interface WeatherState {
