@@ -1,5 +1,5 @@
 import { ACTION_TYPE } from "../constants/action-type";
-import type { WeatherPayload } from "@/api/weather-data-interface";
+import type { WeatherPayload } from "@/modules/weather/types";
 
 export const fetchData = (data: WeatherPayload | undefined) => {
   return {
